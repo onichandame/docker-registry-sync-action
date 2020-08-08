@@ -1,8 +1,27 @@
 name: 'Github Action'
 description: 'create a new action'
 branding:
-  icon: check-square
+  icon: cloud
   color: blue
+inputs:
+  source_repository:
+    description: the source repository
+    required: true
+  source_username:
+    description: the username for the source registry
+    required: false
+  source_password:
+    description: the password for the source registry
+    required: false
+  target_repository:
+    description: the target repository
+    required: true
+  target_username:
+    description: the username for the target registry
+    required: false
+  target_password:
+    description: the password for the target registry
+    required: false
 runs:
   using: 'node12'
   main: 'dist/index.js'

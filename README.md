@@ -6,13 +6,22 @@ A template for making new github actions.
 
 [onichandame](https://onichandame.com)
 
-# Features
+# Usage
 
-- TypeScript
-- JavaScript action
-- yarn
-- Webpack bundling with minimal configuration
-
-# Caveat
-
-1. Github action engine only understands pure JavaScript and does not allow compilation before running the task. Therefore the bundled script in dist directory must be included in the repo.
+```yaml
+name: Sync Registry
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Sync From Docker Hun to Aliyun
+      uses: onichandame/docker-registry-sync-action@master
+      with:
+        source_repository: docker.io/nginx:latest
+        source_username: ${{ secrets.DOCKER_USERNAME }}
+        source_password: ${{ secrets.DOCKER_PASSWORD }}
+        target_repository: registry.cn-shanghai.aliyuncs.com/user/nginx:latest
+        target_username: ${{ secrets.ALIYUN_USERNAME }}
+        target_password: ${{ secrets.ALIYUN_PASSWORD }}
+```
