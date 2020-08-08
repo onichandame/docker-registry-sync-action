@@ -998,7 +998,7 @@ exports.push = () => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
             registry,
         ])) === 0)
         core_1.info(`logged in the target registry`);
-    if (((yield exec_1.exec("docker", ["tag", source, repository])) &&
+    if (((yield exec_1.exec("docker", ["tag", source, repository])) === 0 &&
         (yield exec_1.exec("docker", ["push", repository]))) === 0)
         core_1.info(`pushed ${source} to ${repository}`);
 });

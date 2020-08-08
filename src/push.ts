@@ -18,7 +18,7 @@ export const push = async () => {
   )
     info(`logged in the target registry`)
   if (
-    ((await exec("docker", ["tag", source, repository])) &&
+    ((await exec("docker", ["tag", source, repository])) === 0 &&
       (await exec("docker", ["push", repository]))) === 0
   )
     info(`pushed ${source} to ${repository}`)
