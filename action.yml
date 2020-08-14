@@ -1,5 +1,5 @@
-name: 'Github Action'
-description: 'create a new action'
+name: 'Sync Docker Image to Registry'
+description: 'pull an image from one registry and push to another'
 branding:
   icon: cloud
   color: blue
