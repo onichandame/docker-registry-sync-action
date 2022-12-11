@@ -15,7 +15,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Sync From Docker Hun to Aliyun
+    - name: Sync From Docker Hub to Aliyun
       uses: onichandame/docker-registry-sync-action@master
       with:
         source_repository: docker.io/nginx:latest
